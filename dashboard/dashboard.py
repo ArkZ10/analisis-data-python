@@ -14,7 +14,7 @@ all_df = pd.read_csv("dashboard/all_data.csv")
 all_df["dteday"] = pd.to_datetime(all_df["dteday"], errors='coerce')
 
 # Mengelompokkan data berdasarkan musim dan menghitung jumlah peminjaman sepeda
-season_rentals = all_df.groupby("season")["cnt_day"].sum().sort_values(ascending=False)
+season_rentals = all_df.groupby("season_day")["cnt_day"].sum().sort_values(ascending=False)
 
 # Mengelompokkan data berdasarkan jam dan menghitung jumlah peminjaman sepeda
 hourly_rentals = all_df.groupby("hr")["cnt_hour"].sum()
